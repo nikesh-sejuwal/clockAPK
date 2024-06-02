@@ -56,6 +56,8 @@ class _Home_PageState extends State<Home_Page> {
           child: Consumer<Clockprovider>(builder: (context, cProv, child) {
             int hrs = cProv.myTime.hour;
             String my12hrs = DateFormat('hh').format(cProv.myTime);
+            String mymins = DateFormat('mm').format(cProv.myTime);
+            String mysecs = DateFormat('ss').format(cProv.myTime);
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -92,7 +94,7 @@ class _Home_PageState extends State<Home_Page> {
                               ),
                             ),
                             Text(
-                              cProv.myTime.minute.toString(),
+                              mymins,
                               style: TextStyle(
                                   fontSize: 80,
                                   color: Colors.orange,
@@ -114,7 +116,7 @@ class _Home_PageState extends State<Home_Page> {
                                 Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Text(
-                                    cProv.myTime.second.toString(),
+                                    mysecs,
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
