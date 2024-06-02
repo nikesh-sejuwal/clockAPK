@@ -1,5 +1,4 @@
 import 'package:clock_task/Provider/clockProvider.dart';
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -32,23 +31,31 @@ class _Home_PageState extends State<Home_Page> {
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey.shade100))),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey.shade700,
         actions: [
           IconButton(
               onPressed: () {
                 Provider.of<Clockprovider>(context, listen: false).getTime();
               },
-              icon: Icon(Icons.replay))
+              icon: Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: Icon(
+                  Icons.replay,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              ))
         ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: Colors.grey.shade100,
+        color: Colors.grey,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Consumer<Clockprovider>(builder: (context, cProv, child) {
             int hrs = cProv.myTime.hour;
+            String my12hrs = DateFormat('hh').format(cProv.myTime);
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -75,7 +82,7 @@ class _Home_PageState extends State<Home_Page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(cProv.myTime.hour.toString(), style: myStyle),
+                            Text(my12hrs, style: myStyle),
                             Padding(
                               padding: const EdgeInsets.only(
                                   bottom: 15, left: 5, right: 5),
@@ -84,8 +91,13 @@ class _Home_PageState extends State<Home_Page> {
                                 style: myStyle,
                               ),
                             ),
-                            Text(cProv.myTime.minute.toString(),
-                                style: myStyle),
+                            Text(
+                              cProv.myTime.minute.toString(),
+                              style: TextStyle(
+                                  fontSize: 80,
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold),
+                            ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -118,7 +130,7 @@ class _Home_PageState extends State<Home_Page> {
                           DateFormat(DateFormat.MONTH_WEEKDAY_DAY)
                               .format(cProv.myTime),
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 19,
                               fontWeight: FontWeight.bold,
                               color: Color(0xffB455C4)),
                         ),
@@ -128,9 +140,19 @@ class _Home_PageState extends State<Home_Page> {
                 ),
                 Column(
                   children: [
-                    Text('Made By: '),
-                    Text("Nikesh Sejuwal"),
-                    Text("nikesh@gmail.com")
+                    Text(
+                      'Made By: ',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Nikesh Sejuwal",
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "nirajan132n@gmail.com",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )
                   ],
                 )
               ],

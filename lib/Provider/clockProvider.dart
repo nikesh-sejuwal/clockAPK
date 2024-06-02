@@ -13,7 +13,7 @@ class Clockprovider with ChangeNotifier {
   Future<void> updateTime() async {
     await Future.delayed(Duration(seconds: 1));
     myTime = myTime.add(Duration(seconds: 1));
-    print('hello');
+    // print('hello');
 
     notifyListeners();
     await updateTime();
