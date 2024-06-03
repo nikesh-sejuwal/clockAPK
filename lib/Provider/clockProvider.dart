@@ -27,6 +27,7 @@ class Clockprovider with ChangeNotifier {
         var decodedInfo = jsonDecode(response.body);
         String myDateTime = decodedInfo['datetime'];
         myTime = DateTime.parse(myDateTime);
+        myTime = myTime.add(Duration(hours: 5, minutes: 45));
         print(myTime);
         notifyListeners();
       } else {
