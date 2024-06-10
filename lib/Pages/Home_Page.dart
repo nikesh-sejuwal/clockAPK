@@ -1,4 +1,5 @@
-import 'package:clock_task/Provider/clockProvider.dart';
+import 'package:clock_task/Pages/Weather_method.dart';
+import 'package:clock_task/Provider/myProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -35,7 +36,8 @@ class _Home_PageState extends State<Home_Page> {
         actions: [
           IconButton(
               onPressed: () {
-                Provider.of<Clockprovider>(context, listen: false).getTime();
+                Provider.of<Clockprovider>(context, listen: false)
+                    .functioncall();
               },
               icon: Padding(
                 padding: const EdgeInsets.only(right: 15.0),
@@ -140,6 +142,7 @@ class _Home_PageState extends State<Home_Page> {
                     ),
                   ),
                 ),
+                WeatherMethod(),
                 Column(
                   children: [
                     Text(

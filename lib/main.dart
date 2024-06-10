@@ -1,4 +1,4 @@
-import 'package:clock_task/Provider/clockProvider.dart';
+import 'package:clock_task/Provider/myProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
