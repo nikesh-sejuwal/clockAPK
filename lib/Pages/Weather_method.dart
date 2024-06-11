@@ -21,6 +21,8 @@ class WeatherMethod extends StatelessWidget {
             return 'lib/images/snow.png';
           } else if (wProv.weather['weather'][0]['main'] == 'mist') {
             return 'lib/images/mist.png';
+          } else if (wProv.weather['weather'][0]['main'] == 'Clear') {
+            return 'lib/images/clear.png';
           } else {
             return 'lib/images/search.png';
           }
@@ -70,7 +72,7 @@ class WeatherMethod extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Text(
-                '${wProv.weather['weather'] != null && wProv.weather['weather'].isNotEmpty ? wProv.weather['main']['temp'].round() : "Loading..."}°',
+                '${wProv.weather['weather'] != null && wProv.weather['weather'].isNotEmpty ? wProv.weather['main']['temp'].round() : "Loading..."}°c',
                 style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,

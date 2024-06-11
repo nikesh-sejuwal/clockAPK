@@ -6,10 +6,11 @@ import 'package:http/http.dart' as http;
 class Clockprovider with ChangeNotifier {
   DateTime myTime = DateTime.now();
   Map<String, dynamic> weather = {};
-  String city = 'Kathmandu';
+  String city = 'Pokhara';
 
   changeCity(String ci) {
     city = ci;
+    getWeather(city);
     notifyListeners();
   }
 
@@ -59,7 +60,7 @@ class Clockprovider with ChangeNotifier {
         var decodedInfo = jsonDecode(response.body);
         weather = decodedInfo;
         notifyListeners();
-        print('${weather['name']}');
+        print('${weather}');
       }
     } catch (e) {
       print("ERROR AT $e");
