@@ -13,13 +13,13 @@ class WeatherMethod extends StatelessWidget {
             wProv.weather['weather'].isNotEmpty) {
           if (wProv.weather['weather'][0]['main'] == 'Clouds') {
             return 'lib/images/clouds.png';
-          } else if (wProv.weather['weather'][0]['main'] == 'rain') {
+          } else if (wProv.weather['weather'][0]['main'] == 'Rain') {
             return 'lib/images/rain.png';
-          } else if (wProv.weather['weather'][0]['main'] == 'dizzle') {
+          } else if (wProv.weather['weather'][0]['main'] == 'Dizzle') {
             return 'lib/images/dizzle.png';
-          } else if (wProv.weather['weather'][0]['main'] == 'snow') {
+          } else if (wProv.weather['weather'][0]['main'] == 'Snow') {
             return 'lib/images/snow.png';
-          } else if (wProv.weather['weather'][0]['main'] == 'mist') {
+          } else if (wProv.weather['weather'][0]['main'] == 'Mist') {
             return 'lib/images/mist.png';
           } else if (wProv.weather['weather'][0]['main'] == 'Clear') {
             return 'lib/images/clear.png';
