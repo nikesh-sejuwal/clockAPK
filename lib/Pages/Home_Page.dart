@@ -193,7 +193,7 @@ class _Home_PageState extends State<Home_Page> {
                         style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       Text(
-                        "nirajan132n@gmail.com",
+                        "nirajan123n@gmail.com",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )
                     ],
